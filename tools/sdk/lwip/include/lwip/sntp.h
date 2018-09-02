@@ -7,6 +7,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+  
+struct tm;
 
 typedef long     time_t;
 
@@ -33,6 +35,8 @@ void sntp_set_receive_time_size(void);
  */
 uint32 sntp_get_current_timestamp();
 char* sntp_get_real_time(long t);
+
+tm sntp_localtime(long t);
 
 void sntp_init(void);
 void sntp_stop(void);
